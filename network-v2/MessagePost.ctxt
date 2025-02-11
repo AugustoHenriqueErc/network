@@ -8,5 +8,5 @@ comment2.params=
 comment2.target=java.lang.String\ getText()
 comment2.text=\r\n\ Return\ the\ text\ of\ this\ post.\r\n\ \r\n\ @return\ The\ post's\ message\ text.\r\n
 comment3.params=
-comment3.target=void\ display()
+comment3.target=java.lang.String\ PostString()
 numComments=4

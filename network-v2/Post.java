@@ -97,6 +97,17 @@ public class Post
         }
     }*/
     
+    public String PostString()
+    {
+        StringBuilder sb = new StringBuilder();
+        
+        sb.append(getUsername()+ "\n");
+        sb.append(getLikes()+ "\n");
+        sb.append(getComments()+ "\n");
+        
+        return sb.toString();
+    }
+    
     protected String getLikes()
     {
         String likeString;

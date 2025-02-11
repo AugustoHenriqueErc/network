@@ -33,12 +33,15 @@ public class MessagePost extends Post
     {
         return message;
     }
-    
-    public void display()
+    @Override
+    public String PostString()
     {
-        System.out.println(super.getUsername());
-        System.out.println(super.getLikes());
-        System.out.println(super.getComments());
-        System.out.println(message);
+        StringBuilder sb = new StringBuilder();
+        
+        sb.append(super.getUsername()+ "\n");
+        sb.append(super.getLikes()+ "\n");
+        sb.append(super.getComments()+ "\n");
+        sb.append(message);
+        return sb.toString();
     }
 }
