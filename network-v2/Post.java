@@ -27,6 +27,11 @@ public class Post
         likes = 0;
         comments = new ArrayList<>();
     }
+    
+    protected String getUsername()
+    {
+        return username;
+    }
 
     /**
      * Record one more 'Like' indication from a user.
@@ -72,7 +77,7 @@ public class Post
      * (Currently: Print to the text terminal. This is simulating display 
      * in a web browser for now.)
      */
-    public void display()
+    /*public void display()
     {
         System.out.println(username);
         System.out.print(timeString(timestamp));
@@ -90,6 +95,22 @@ public class Post
         else {
             System.out.println("   " + comments.size() + " comment(s). Click here to view.");
         }
+    }*/
+    
+    protected String getLikes()
+    {
+        String likeString;
+        if(likes > 0)likeString= "  -  " + likes + " people like this.";
+        else likeString = " ";
+        return likeString;
+    }
+    
+    protected String getComments()
+    {
+        String commentString;
+        if(comments.isEmpty())commentString = "   No comments.";
+        else commentString = "   " + comments.size() + " comment(s). Click here to view.";
+        return commentString;
     }
     
     /**

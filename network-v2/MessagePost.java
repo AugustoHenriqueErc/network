@@ -10,8 +10,8 @@ import java.util.ArrayList;
  */
 public class MessagePost extends Post
 {
-    private String message;  // an arbitrarily long, multi-line message
-
+    private String message;// an arbitrarily long, multi-line message
+     
     /**
      * Constructor for objects of class MessagePost.
      * 
@@ -32,5 +32,13 @@ public class MessagePost extends Post
     public String getText()
     {
         return message;
+    }
+    
+    public void display()
+    {
+        System.out.println(super.getUsername());
+        System.out.println(super.getLikes());
+        System.out.println(super.getComments());
+        System.out.println(message);
     }
 }
