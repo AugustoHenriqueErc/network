@@ -47,11 +47,17 @@ public class PhotoPost extends Post
         return caption;
     }
     
-    //@Override
-    public void display()
+    @Override
+    public String toString()
     {
-        //super.display();
-        System.out.println(filename);
-        System.out.println(caption);
+        StringBuilder sb = new StringBuilder();
+        
+        sb.append(super.getUsername()+ "\n");
+        sb.append(filename+"\n");
+        sb.append(caption+"\n");
+        sb.append(super.timeString(super.timestamp));
+        sb.append(super.getLikes()+ "\n");
+        sb.append(super.getComments()+ "\n");
+        return sb.toString();
     }
 }

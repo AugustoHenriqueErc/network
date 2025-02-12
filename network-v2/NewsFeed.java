@@ -42,9 +42,8 @@ public class NewsFeed
      */
     public void show()
     {
-        // display all posts
         for(Post post : posts) {
-            System.out.println(post.PostString());
+            System.out.println(post.toString());
             //post.display();
             System.out.println();   // empty line between posts
         }

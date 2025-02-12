@@ -11,5 +11,5 @@ comment3.params=
 comment3.target=java.lang.String\ getCaption()
 comment3.text=\r\n\ Return\ the\ caption\ of\ the\ image\ of\ this\ post.\r\n\ \r\n\ @return\ The\ image's\ caption.\r\n
 comment4.params=
-comment4.target=void\ display()
+comment4.target=java.lang.String\ toString()
 numComments=5

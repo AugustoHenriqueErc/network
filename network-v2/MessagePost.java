@@ -34,14 +34,16 @@ public class MessagePost extends Post
         return message;
     }
     @Override
-    public String PostString()
+    public String toString()
     {
         StringBuilder sb = new StringBuilder();
         
         sb.append(super.getUsername()+ "\n");
+        sb.append(message + "\n");
+        sb.append(super.timeString(super.timestamp));
         sb.append(super.getLikes()+ "\n");
         sb.append(super.getComments()+ "\n");
-        sb.append(message);
+        
         return sb.toString();
     }
 }
