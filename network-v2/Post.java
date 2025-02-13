@@ -28,7 +28,7 @@ public class Post
         comments = new ArrayList<>();
     }
     
-    protected String getUsername()
+    protected String getUserName()
     {
         return username;
     }
@@ -101,7 +101,7 @@ public class Post
     {
         StringBuilder sb = new StringBuilder();
         
-        sb.append(getUsername()+ "\n");
+        sb.append(getUserName()+ "\n");
         sb.append(getLikes()+ "\n");
         sb.append(getComments()+ "\n");
         
@@ -146,4 +146,12 @@ public class Post
             return seconds + " seconds ago";
         }
     }
+    
+    protected String getShortSummary()
+    {
+        StringBuilder shortSummary = new StringBuilder();    
+        shortSummary.append( "Message post from "+getUserName()+"\n");
+        return shortSummary.toString();
+    }
+
 }
