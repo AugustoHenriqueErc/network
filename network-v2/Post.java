@@ -12,9 +12,6 @@ public class Post
 {
     private String username;  // username of the post's author
     protected long timestamp;
-    private int likes;
-    private ArrayList<String> comments;
-    
     /**
      * Constructor for objects of class Post.
      * 
@@ -24,41 +21,11 @@ public class Post
     {
         username = author;
         timestamp = System.currentTimeMillis();
-        likes = 0;
-        comments = new ArrayList<>();
     }
     
     protected String getUserName()
     {
         return username;
-    }
-
-    /**
-     * Record one more 'Like' indication from a user.
-     */
-    public void like()
-    {
-        likes++;
-    }
-
-    /**
-     * Record that a user has withdrawn his/her 'Like' vote.
-     */
-    public void unlike()
-    {
-        if (likes > 0) {
-            likes--;
-        }
-    }
-
-    /**
-     * Add a comment to this post.
-     * 
-     * @param text  The new comment to add.
-     */
-    public void addComment(String text)
-    {
-        comments.add(text);
     }
 
     /**
@@ -77,51 +44,12 @@ public class Post
      * (Currently: Print to the text terminal. This is simulating display 
      * in a web browser for now.)
      */
-    /*public void display()
-    {
-        System.out.println(username);
-        System.out.print(timeString(timestamp));
-        
-        if(likes > 0) {
-            System.out.println("  -  " + likes + " people like this.");
-        }
-        else {
-            System.out.println();
-        }
-        
-        if(comments.isEmpty()) {
-            System.out.println("   No comments.");
-        }
-        else {
-            System.out.println("   " + comments.size() + " comment(s). Click here to view.");
-        }
-    }*/
-    
+    @Override
     public String toString()
     {
         StringBuilder sb = new StringBuilder();
-        
-        sb.append(getUserName()+ "\n");
-        sb.append(getLikes()+ "\n");
-        sb.append(getComments()+ "\n");
-        
+        sb.append(getShortSummary());
         return sb.toString();
-    }
-    
-    protected String getLikes()
-    {
-        String likeString;
-        if(likes > 0)likeString= "  -  " + likes + " people like this.";
-        else likeString = " ";
-        return likeString;
-    }
-    
-    protected String getComments()
-    {
-        String commentString;
-        if(comments.isEmpty())commentString = "   No comments.";
-        else commentString = "   " + comments.size() + " comment(s). Click here to view.";
-        return commentString;
     }
     
     /**
@@ -150,7 +78,7 @@ public class Post
     protected String getShortSummary()
     {
         StringBuilder shortSummary = new StringBuilder();    
-        shortSummary.append( "Message post from "+getUserName()+"\n");
+        shortSummary.append( "Message post from "+getUserName()+" "+timeString(timestamp));
         return shortSummary.toString();
     }
 

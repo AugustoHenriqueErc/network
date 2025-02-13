@@ -8,7 +8,7 @@ import java.util.ArrayList;
  * @author Michael Kölling and David J. Barnes
  * @version 0.2
  */
-public class MessagePost extends Post
+public class MessagePost extends CommentedPost
 {
     private String message;// an arbitrarily long, multi-line message
      
@@ -38,11 +38,10 @@ public class MessagePost extends Post
     {
         StringBuilder sb = new StringBuilder();
         
-        sb.append(super.getUsername()+ "\n");
+        sb.append(super.getShortSummary()+"\n");
         sb.append(message + "\n");
-        sb.append(super.timeString(super.timestamp));
         sb.append(super.getLikes()+ "\n");
-        sb.append(super.getComments()+ "\n");
+        sb.append(super.getComments());
         
         return sb.toString();
     }
