@@ -7,13 +7,21 @@
  */
 public class EventPost extends Post
 {
-
+    private String event;
     /**
      * Construtor para objetos da classe EventPost
      */
-    public EventPost(String author)
+    public EventPost(String author, String event)
     {
-         super(author);
+        super(author); 
+        this.event = event;
+    }
+    
+    public String toString()
+    {
+        StringBuilder sb = new StringBuilder();
+        sb.append(event);
+        return sb.toString();
     }
     
 }
